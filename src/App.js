@@ -8,7 +8,9 @@ import PokemonDetailsPage from "./pages/pokemonDetailsPage/PokemonDetailsPage";
 
 function App() {
   return (
-    <main>
+    <main style={{
+      backgroundImage: `url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png)`,
+    }}>
       <Router>
         <Routes>
           <Route path="/" element={<CaughtPokemonPage />} />

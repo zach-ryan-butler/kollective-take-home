@@ -7,16 +7,16 @@ import Grid from "@mui/material/Grid";
 // components
 import PokemonItem from "../pokemonItem/PokemonItem";
 
-// redux selectors
-import { getWildPokemon } from "../../state/pokemon/pokemon.selectors";
+// pokemon redux
+import { getAllWildPokemonIds } from "../../state/pokemon/pokemon.selectors";
 
 export default function PokemonList() {
-  const wildPokemonState = useSelector(getWildPokemon);
+  const wildPokemonIds = useSelector(getAllWildPokemonIds);
 
   return (
     <Grid container>
-      {wildPokemonState.map((pokemon, index) => (
-        <PokemonItem pokemon={pokemon} key={pokemon?.id} />
+      {wildPokemonIds.map((pokemonId) => (
+        <PokemonItem pokemonId={pokemonId} key={pokemonId} />
       ))}
     </Grid>
   );

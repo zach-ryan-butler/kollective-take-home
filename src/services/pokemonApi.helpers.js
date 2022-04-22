@@ -4,5 +4,6 @@ export const getTenRandomNumbers = (max) => {
         const randomNumber = Math.floor(Math.random() * max + 1)
         numbers.push(randomNumber);
     }
+
     return numbers;
 }

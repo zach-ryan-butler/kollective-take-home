@@ -5,13 +5,17 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import CatchPokemonPage from "./pages/catchPokemonPage/CatchPokemonPage";
 import CaughtPokemonPage from "./pages/caughtPokemonPage/CaughtPokemonPage";
 import PokemonDetailsPage from "./pages/pokemonDetailsPage/PokemonDetailsPage";
+import Header from "./components/header/Header";
 
 function App() {
   return (
-    <main style={{
-      backgroundImage: `url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png)`,
-    }}>
+    <main
+      style={{
+        backgroundImage: `url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png)`,
+      }}
+    >
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<CaughtPokemonPage />} />
           <Route path="catch" element={<CatchPokemonPage />} />

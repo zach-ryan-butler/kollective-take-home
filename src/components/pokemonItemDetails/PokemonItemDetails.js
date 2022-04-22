@@ -36,7 +36,7 @@ export default function PokemonItemDetails({ pokemonId }) {
         onClick={handleClick}
       />
       <Box sx={styles.pokemonDetailsContainer}>
-        <Typography variant="caption" sx={styles.pokemonDetailsId}>
+        <Typography variant="caption" component='p' sx={styles.pokemonDetailsId}>
           #{wildPokemon.id}
         </Typography>
         <Typography variant="h6">{wildPokemon.name}</Typography>

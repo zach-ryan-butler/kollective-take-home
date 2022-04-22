@@ -7,13 +7,12 @@ import CaughtPokemonPage from "./pages/caughtPokemonPage/CaughtPokemonPage";
 import PokemonDetailsPage from "./pages/pokemonDetailsPage/PokemonDetailsPage";
 import Header from "./components/header/Header";
 
+// styles
+import { styles } from "./App.styles";
+
 function App() {
   return (
-    <main
-      style={{
-        backgroundImage: `url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png)`,
-      }}
-    >
+    <main style={styles.main}>
       <Router>
         <Header />
         <Routes>

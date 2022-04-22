@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 // material components
@@ -20,12 +20,20 @@ export default function PokemonItemDetails({ pokemonId }) {
     getWildPokemonById(state, pokemonId)
   );
 
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const handleClick = () => {
+    setIsDisabled(!isDisabled);
+  }
+
+
   return (
     <>
       <img
         src={wildPokemon?.sprites?.front_default}
         alt="pokemon"
         style={styles.image}
+        onClick={handleClick}
       />
       <Box sx={styles.pokemonDetailsContainer}>
         <Typography variant="caption" sx={styles.pokemonDetailsId}>
@@ -52,7 +60,7 @@ export default function PokemonItemDetails({ pokemonId }) {
           );
         })}
       </Box>
-      <Button variant="contained" sx={styles.button}>
+      <Button disabled={isDisabled} variant="contained" sx={styles.button}>
         Catch!
       </Button>
     </>

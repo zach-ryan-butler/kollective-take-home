@@ -2,6 +2,7 @@ export const styles = {
   image: {
     width: "100%",
     backgroundColor: "#EFEBE9",
+    cursor: "pointer",
   },
   pokemonDetailsContainer: {
     paddingLeft: "1rem",

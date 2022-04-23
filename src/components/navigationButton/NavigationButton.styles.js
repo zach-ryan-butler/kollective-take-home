@@ -1,9 +1,9 @@
 export const styles = {
   button: {
-    color: "#ff867c",
+    color: (theme) => theme.palette.primary.main,
     "&:hover": {
       color: "white",
-      backgroundColor: "#ff867c",
+      backgroundColor: (theme) => theme.palette.primary.main,
     },
   },
 };

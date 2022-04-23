@@ -1,5 +1,16 @@
-export const getPokemonTypeToColor = (type) => {
-    return {
+import { createTheme } from "@mui/material/styles";
+
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#ff867c",
+      dark: "#b61827",
+    },
+    secondary: {
+      main: "#29b6f6",
+      dark: "#0085c1",
+    },
+    pokemonType: {
       bug: "#729F3F",
       dragon: "#F16E57",
       fairy: "#FDB9E9",
@@ -15,8 +26,9 @@ export const getPokemonTypeToColor = (type) => {
       flying: "#3DC7EF",
       grass: "#9BCC50",
       ice: "#51C4E7",
-      poison: '#B97FC9',
-      rock: '#A38C21',
-      water: '#4592C4',
-    }[type];
-  };
+      poison: "#B97FC9",
+      rock: "#A38C21",
+      water: "#4592C4",
+    },
+  },
+});

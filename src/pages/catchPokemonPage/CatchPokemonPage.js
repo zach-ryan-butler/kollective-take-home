@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // material components
@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 
 // components
 import PokemonList from "../../components/pokemonList/PokemonList";
+import CatchPokemonDialog from "../../components/catchPokemonDialog/CatchPokemonDialog";
 
 // pokemon redux
 import { fetchRandomPokemon } from "../../state/pokemon/pokemon.slice";
@@ -19,6 +20,12 @@ import { styles } from "./CatchPokemonPage.styles";
 export default function CatchPokemonPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(getLoadingState);
+  const [open, setOpen] = useState(false);
+  const [pokemonId, setPokemonId] = useState("");
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   useEffect(() => {
     dispatch(fetchRandomPokemon());
@@ -36,7 +43,11 @@ export default function CatchPokemonPage() {
 
   return (
     <Container maxWidth="lg" sx={styles.container}>
-      <PokemonList />
+      <CatchPokemonDialog setOpen={setOpen} open={open} pokemonId={pokemonId} />
+      <PokemonList
+        handleClickOpen={handleClickOpen}
+        setPokemonId={setPokemonId}
+      />
     </Container>
   );
 }

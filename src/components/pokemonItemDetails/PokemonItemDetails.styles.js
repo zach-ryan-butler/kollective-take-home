@@ -17,10 +17,10 @@ export const styles = {
   },
   button: {
     width: "100%",
-    backgroundColor: "#ff867c",
-    color: "white",
+    backgroundColor: (theme) => theme.palette.primary.main,
+    color: (theme) => theme.palette.common.white,
     "&:hover": {
-      backgroundColor: "#b61827",
+      backgroundColor: (theme) => theme.palette.primary.dark,
     },
   },
 };

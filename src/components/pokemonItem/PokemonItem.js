@@ -10,11 +10,19 @@ import PokemonItemDetails from "../pokemonItemDetails/PokemonItemDetails";
 // styles
 import { styles } from "./PokemonItem.styles";
 
-export default function PokemonItem({ pokemonId }) {
+export default function PokemonItem({
+  pokemonId,
+  handleClickOpen,
+  setPokemonId,
+}) {
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} sx={styles.gridItem}>
       <Paper elevation={0} sx={styles.paper}>
-        <PokemonItemDetails pokemonId={pokemonId} />
+        <PokemonItemDetails
+          pokemonId={pokemonId}
+          handleClickOpen={handleClickOpen}
+          setPokemonId={setPokemonId}
+        />
       </Paper>
     </Grid>
   );

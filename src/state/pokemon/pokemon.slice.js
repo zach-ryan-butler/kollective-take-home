@@ -27,17 +27,8 @@ export const pokemonSlice = createSlice({
   initialState,
   reducers: {
     addCaughtPokemon: (state, action) => {
-      state.caughtPokemonById = {
-        ...state.caughtPokemonById,
-        pokemonById: {
-          ...state.caughtPokemonById.pokemonById,
-          [action.payload.id]: action.payload,
-        },
-        allPokemonIds: [
-          ...state.caughtPokemonById.allPokemonIds,
-          action.payload.id,
-        ],
-      };
+      state.caughtPokemonById.pokemonById[action.payload.id] = action.payload;
+      state.caughtPokemonById.allPokemonIds.push(action.payload.id);
     },
   },
   extraReducers: (builder) => {

@@ -4,10 +4,4 @@ export const styles = {
     minHeight: "100vh",
     paddingTop: "100px",
   },
-  box: {
-    height: "90vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
 };

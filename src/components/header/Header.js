@@ -17,7 +17,7 @@ export default function Header() {
 
   if (pathname === "/catch") {
     return (
-      <AppBar position="sticky" sx={styles.appBar}>
+      <AppBar position='fixed' sx={styles.appBar}>
         <Toolbar>
           <Typography variant="h4" sx={styles.title}>
             Pokemon Catcher
@@ -29,7 +29,7 @@ export default function Header() {
   }
 
   return (
-    <AppBar position="sticky" sx={styles.appBar}>
+    <AppBar position="fixed" sx={styles.appBar}>
       <Toolbar>
         <Typography variant="h4" sx={styles.title}>
           Pokemon Catcher

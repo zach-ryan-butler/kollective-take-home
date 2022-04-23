@@ -31,3 +31,12 @@ export const handleSubmit = ({
   setNickname("");
   handleClose();
 };
+
+export const handleNicknameChange = ({ event, setNickname }) => {
+  setNickname(event.target.value);
+};
+
+export const handleDialogClose = ({ setNickname, handleClose }) => {
+  setNickname("");
+  handleClose();
+};

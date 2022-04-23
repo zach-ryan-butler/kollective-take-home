@@ -10,11 +10,6 @@ export const styles = {
   pokemonDetailsId: {
     color: (theme) => theme.palette.grey[500],
   },
-  pokemonTypeContainer: {
-    paddingLeft: "1rem",
-    display: "flex",
-    marginBottom: "10px",
-  },
   button: {
     width: "100%",
     backgroundColor: (theme) => theme.palette.primary.main,

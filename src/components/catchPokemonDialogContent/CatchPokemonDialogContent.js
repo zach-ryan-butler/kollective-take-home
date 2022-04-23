@@ -12,7 +12,11 @@ import TextField from "@mui/material/TextField";
 import { getWildPokemonById } from "../../state/pokemon/pokemon.selectors";
 
 // helpers
-import { handleSubmit } from "./CatchPokemonDialogContent.helpers";
+import {
+  handleSubmit,
+  handleNicknameChange,
+  handleDialogClose,
+} from "./CatchPokemonDialogContent.helpers";
 
 // styles
 import { styles } from "./CatchPokemonDialogContent.styles";
@@ -23,15 +27,6 @@ export default function CatchPokemonDialogContent({ handleClose, pokemonId }) {
   const selectedPokemon = useSelector((state) =>
     getWildPokemonById(state, pokemonId)
   );
-
-  const handleNicknameChange = (event) => {
-    setNickname(event.target.value);
-  };
-
-  const handleDialogClose = () => {
-    setNickname("");
-    handleClose();
-  };
 
   return (
     <DialogContent sx={styles.dialogContent}>
@@ -57,11 +52,11 @@ export default function CatchPokemonDialogContent({ handleClose, pokemonId }) {
           variant="outlined"
           color="secondary"
           value={nickname}
-          onChange={handleNicknameChange}
+          onChange={(event) => handleNicknameChange({ event, setNickname })}
         />
         <DialogActions sx={styles.dialogActions}>
           <Button
-            onClick={handleDialogClose}
+            onClick={() => handleDialogClose({ setNickname, handleClose })}
             color="primary"
             sx={styles.button}
             variant="contained"

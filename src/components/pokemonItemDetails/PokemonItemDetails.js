@@ -7,11 +7,17 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
+// components
+import PokemonItemDetailsTypes from "../pokemonItemDetailsTypes/PokemonItemDetailsTypes";
+
 // pokemon redux
 import {
   getWildPokemonById,
   getCaughtPokemonById,
 } from "../../state/pokemon/pokemon.selectors";
+
+// helpers
+import { handleClick, handleCatchClick } from "./PokemonItemDetails.helpers";
 
 // styles
 import { styles } from "./PokemonItemDetails.styles.js";
@@ -25,26 +31,13 @@ export default function PokemonItemDetails({
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const wildPokemon = useSelector((state) =>
-  getWildPokemonById(state, pokemonId)
+    getWildPokemonById(state, pokemonId)
   );
   const caughtPokemon = useSelector((state) =>
-  getCaughtPokemonById(state, pokemonId)
+    getCaughtPokemonById(state, pokemonId)
   );
   const isCatchPokemonPage = pathname === "/catch" ? true : false;
   const isWildPokemon = isCatchPokemonPage ? wildPokemon : caughtPokemon;
-
-  const handleClick = () => {
-    if (isCatchPokemonPage) {
-      setIsDisabled(!isDisabled);
-    } else {
-      navigate(`/details/${caughtPokemon.id}`);
-    }
-  };
-
-  const handleCatchClick = () => {
-    setPokemonId(wildPokemon.id);
-    handleClickOpen();
-  };
 
   return (
     <>
@@ -52,7 +45,15 @@ export default function PokemonItemDetails({
         src={isWildPokemon?.sprites?.front_default}
         alt="pokemon"
         style={styles.image}
-        onClick={handleClick}
+        onClick={() =>
+          handleClick({
+            isCatchPokemonPage,
+            setIsDisabled,
+            isDisabled,
+            navigate,
+            caughtPokemon,
+          })
+        }
       />
       <Box sx={styles.pokemonDetailsContainer}>
         <Typography
@@ -64,32 +65,15 @@ export default function PokemonItemDetails({
         </Typography>
         <Typography variant="h6">{isWildPokemon.name}</Typography>
       </Box>
-      <Box sx={styles.pokemonTypeContainer}>
-        {isWildPokemon?.types?.map(({ type }, index) => {
-          return (
-            <Box
-              key={index}
-              sx={{
-                backgroundColor: (theme) =>
-                  theme.palette.pokemonType[type.name],
-                color: (theme) => theme.palette.common.white,
-                width: "4rem",
-                borderRadius: "3px",
-                textAlign: "center",
-                marginRight: ".5rem",
-              }}
-            >
-              <Typography variant="caption">{type.name}</Typography>
-            </Box>
-          );
-        })}
-      </Box>
+      <PokemonItemDetailsTypes isWildPokemon={isWildPokemon} />
       {isCatchPokemonPage && (
         <Button
           disabled={isDisabled}
           variant="contained"
           sx={styles.button}
-          onClick={handleCatchClick}
+          onClick={() =>
+            handleCatchClick({ setPokemonId, wildPokemon, handleClickOpen })
+          }
         >
           Catch!
         </Button>

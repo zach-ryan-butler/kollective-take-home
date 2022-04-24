@@ -16,6 +16,7 @@ import { getIsAllCaughtPokemonIdsEmpty } from "../../state/pokemon/pokemon.selec
 
 // local storage helpers
 import { getPokemonFromLocalStorage } from "../../data/localStorage.helpers";
+import { Typography } from "@mui/material";
 
 export default function CaughtPokemonPage() {
   const isCaughtPokemonIdsEmpty = useSelector(getIsAllCaughtPokemonIdsEmpty);
@@ -29,6 +30,16 @@ export default function CaughtPokemonPage() {
       );
     }
   }, [dispatch, isCaughtPokemonIdsEmpty]);
+
+  if (isCaughtPokemonIdsEmpty) {
+    return (
+      <Container maxWidth="lg" sx={styles.container}>
+        <Typography sx={{ textAlign: "center" }} variant="h5">
+          Click the link in the top right to go catch Pokemon!
+        </Typography>
+      </Container>
+    );
+  }
 
   return (
     <Container maxWidth="lg" sx={styles.container}>

@@ -1,5 +1,5 @@
 export const styles = {
   dialogTitle: {
-    padding: "2rem",
+    padding: "2em",
   },
 };

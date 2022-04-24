@@ -3,13 +3,13 @@ export const styles = {
     width: "100%",
   },
   typeTitle: {
-    paddingBottom: "20px",
-    paddingTop: "20px",
+    paddingBottom: "1em",
+    paddingTop: "1em",
   },
   typeValueContainer: {
     display: "flex",
   },
   typeName: {
-    fontSize: "16px",
+    fontSize: "1rem",
   },
 };

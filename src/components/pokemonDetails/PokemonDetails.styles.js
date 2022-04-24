@@ -1,7 +1,11 @@
 export const styles = {
   gridContainer: {
-    paddingLeft: "3rem",
-    paddingRight: "3rem",
+    paddingLeft: {
+      md: "3em",
+    },
+    paddingRight: {
+      md: "3em",
+    },
     maxWidth: 1000,
     margin: "auto",
   },
@@ -9,12 +13,12 @@ export const styles = {
     display: "flex",
     justifyContent: "center",
     paddingBottom: {
-      xs: "2rem",
-      md: "3rem",
+      xs: "2em",
+      md: "3em",
     },
   },
   leftTitle: {
-    paddingRight: "10px",
+    paddingRight: ".5em",
     fontSize: {
       xs: "2.5rem",
       md: "3rem",
@@ -30,13 +34,13 @@ export const styles = {
   detailsContainer: {
     display: "flex",
     justifyContent: "center",
-    padding: "1rem",
+    padding: "1em",
   },
   image: {
     width: "100%",
     backgroundColor: "#EFEBE9",
   },
   statsAndTypesContainer: {
-    padding: "1rem",
+    padding: "1em",
   },
 };

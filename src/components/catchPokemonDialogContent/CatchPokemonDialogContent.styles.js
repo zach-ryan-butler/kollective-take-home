@@ -1,12 +1,12 @@
 export const styles = {
   dialogContent: {
-    padding: "2rem",
+    padding: "2em",
   },
   dialogContentText: {
-    paddingBottom: "1rem",
+    paddingBottom: "1em",
   },
   dialogActions: {
-    paddingTop: "1rem",
+    paddingTop: "1em",
   },
   button: {
     color: (theme) => theme.palette.common.white,

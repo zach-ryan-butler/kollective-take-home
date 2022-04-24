@@ -5,7 +5,7 @@ export const styles = {
     cursor: "pointer",
   },
   pokemonDetailsContainer: {
-    paddingLeft: "1rem",
+    paddingLeft: "1em",
   },
   pokemonDetailsId: {
     color: (theme) => theme.palette.grey[500],

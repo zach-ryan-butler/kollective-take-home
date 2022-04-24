@@ -1,7 +1,7 @@
 export const styles = {
   pokemonTypeContainer: {
-    paddingLeft: "1rem",
+    paddingLeft: "1em",
     display: "flex",
-    marginBottom: "10px",
+    marginBottom: ".625em",
   },
 };

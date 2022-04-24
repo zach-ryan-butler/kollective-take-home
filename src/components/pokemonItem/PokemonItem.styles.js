@@ -16,6 +16,6 @@ export const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: "50px",
+    marginBottom: "3.125em",
   },
 };

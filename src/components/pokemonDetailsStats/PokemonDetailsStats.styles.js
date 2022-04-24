@@ -4,17 +4,17 @@ export const styles = {
     borderRadius: "10px",
   },
   statItem: {
-    padding: "1rem",
+    padding: "1em",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
   },
   statType: {
-    fontSize: "16px",
+    fontSize: "1rem",
     color: (theme) => theme.palette.common.white,
   },
   statValue: {
-    fontSize: "20px",
-    paddingTop: "10px",
+    fontSize: "1.25rem",
+    paddingTop: ".625em",
   },
 };

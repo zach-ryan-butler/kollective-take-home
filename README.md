@@ -10,4 +10,4 @@
 - To run project on a development server you type these following commands
 - From terminal, npm install
 - From terminal, npm start
-- - To see on netlify [Click here](https://poke-catcher-challenge.netlify.app/)
+- To see on netlify [Click here](https://poke-catcher-challenge.netlify.app/)

@@ -10,4 +10,27 @@ describe("getTenRandomNumbers", () => {
 
     expect(actual.length).toEqual(expected.length);
   });
+
+  it("doesnt repeat numbers", () => {
+    jest
+      .spyOn(global.Math, "random")
+      .mockImplementationOnce(() => 1)
+      .mockImplementationOnce(() => 1);
+
+    const max = 20;
+
+    const actual = getTenRandomNumbers(max);
+
+    // first entry is mocked value
+    expect(actual[0]).toEqual(21);
+    // we try to force a duplicate but number is unique
+    expect(actual[1]).not.toEqual(21);
+    expect(actual.length).toEqual(10);
+  });
+
+  it("works if no max is provided", () => {
+    const actual = getTenRandomNumbers();
+
+    expect(actual).toEqual([]);
+  });
 });

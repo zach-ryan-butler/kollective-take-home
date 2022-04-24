@@ -84,7 +84,9 @@ describe("gettingPokemonState", () => {
     };
 
     const expected = { name: "pikachu" };
+
     const id = "10";
+
     const actual = getWildPokemonById(initialState, id);
 
     expect(actual).toEqual(expected);
@@ -107,6 +109,7 @@ describe("gettingPokemonState", () => {
     };
 
     const expected = [10, 50, 100];
+
     const actual = getAllCaughtPokemonIds(initialState);
 
     expect(actual).toEqual(expected);
@@ -132,7 +135,9 @@ describe("gettingPokemonState", () => {
     };
 
     const expected = { name: "meowth" };
+
     const id = "20";
+
     const actual = getCaughtPokemonById(initialState, id);
 
     expect(actual).toEqual(expected);
@@ -155,6 +160,7 @@ describe("gettingPokemonState", () => {
     };
 
     const expected = true;
+
     const actual = getIsAllCaughtPokemonIdsEmpty(initialState);
 
     expect(actual).toEqual(expected);
@@ -176,6 +182,7 @@ describe("gettingPokemonState", () => {
     };
 
     const expected = false;
+    
     const actual = getLoadingState(initialState);
 
     expect(actual).toEqual(expected);

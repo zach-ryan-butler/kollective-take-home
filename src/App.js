@@ -19,7 +19,7 @@ import { styles } from "./App.styles";
 function App() {
 
   return (
-    <main style={styles.main}>
+    <main style={styles.main} data-testid="app">
       <ThemeProvider theme={theme}>
         <Router>
           <Header />

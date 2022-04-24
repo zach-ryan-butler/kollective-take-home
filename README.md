@@ -9,5 +9,5 @@
 - Open project in text editor to view code
 - To run project on a development server you type these following commands
 - From terminal, npm install
-- From terminal, npm start```
+- From terminal, npm start
 - - To see on netlify [Click here](https://ephemeral-kangaroo-f2a4de.netlify.app/)
